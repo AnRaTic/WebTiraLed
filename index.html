@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tira led</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web de control de una tira LED">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Antonio Ramos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosCSS/estilo.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="librerias/jquery.keyframes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="control.js"></script>
+
+</head>
+
+
+<body>
+    <section class="navBar">
+        <ul>
+            <li>
+                <section class="logo">
+                    <object type="image/svg+xml" data="https://image.flaticon.com/icons/svg/891/891024.svg">
+                        Your browser does not support SVG
+                    </object>
+                    <article>
+                        Electro & TIC Toni's
+                    </article>
+                </section>
+            </li>
+        </ul>
+    </section>
+    <section class="principal">
+        <section class="primero">
+            <article class="descripcion">
+                Esta página web ha sido realizada con el propósito de poder controlar la tira de Leds
+                ws2812b. Para cambiar de color elige una de las siguientes opciones pinchando encima de ellas, que se
+                previsualizaran, y dale al botón enviar asegurandote de que has puesto la dirección IP de tu raspberry y
+                el puerto correcto.
+            </article>
+            <section class="animacion">
+                <svg width=100% height="200" viewBox="0 0 800 150">
+                    <rect width=700 height="50" x=50 y=40 rx="20" ry="30" />
+                    <circle id="l-8" class="led8" cx=10% cy="65" r="10" />
+                    <circle id="l-7" class="led7" cx=15% cy="65" r="10" />
+                    <circle id="l-6" class="led6" cx=20% cy="65" r="10" />
+                    <circle id="l-5" class="led5" cx=25% cy="65" r="10" />
+                    <circle id="l-4" class="led4" cx=30% cy="65" r="10" />
+                    <circle id="l-3" class="led3" cx=35% cy="65" r="10" />
+                    <circle id="l-2" class="led2" cx=40% cy="65" r="10" />
+                    <circle id="l-1" class="led1" cx=45% cy="65" r="10" />
+                    <circle id="l0" class="led0" cx=50% cy="65" r="10" />
+                    <circle id="l1" class="led1" cx=55% cy="65" r="10" />
+                    <circle id="l2" class="led2" cx=60% cy="65" r="10" />
+                    <circle id="l3" class="led3" cx=65% cy="65" r="10" />
+                    <circle id="l4" class="led4" cx=70% cy="65" r="10" />
+                    <circle id="l5" class="led5" cx=75% cy="65" r="10" />
+                    <circle id="l6" class="led6" cx=80% cy="65" r="10" />
+                    <circle id="l7" class="led7" cx=85% cy="65" r="10" />
+                    <circle id="l8" class="led8" cx=90% cy="65" r="10" />
+                    <path d="M 2 10 l 82 0 l 0 28" fill="none" />
+                    <path class="flujo" d="M 2 10 l 82 0 l 0 28" fill="none" />
+                    <circle class="pin" cx="6" cy="10" r="5" />
+                    <path d="M 2 50 l 20 0 l 0 15 l 27 0" fill="none" />
+                    <path class="flujo" d="M 2 50 l 20 0 l 0 15 l 27 0" fill="none" />
+                    <circle class="pin" cx="6" cy="50" r="5" />
+                    <path d="M 2 120 l 35 0 l 0 -10 l 45 0 l 0 -20" fill="none" />
+                    <path class="flujo" d="M 2 120 l 35 0 l 0 -10 l 45 0 l 0 -20" fill="none" />
+                    <circle class="pin" cx="6" cy="120" r="5" />
+                    <path d="M 700 40 l 0 -15 l 20 0 l 0 -17 l 80 0" fill="none" />
+                    <path class="flujo" d="M 700 40 l 0 -15 l 20 0 l 0 -17 l 80 0" fill="none" />
+                    <path d="M 749 78 l 20 0 l 0 -20 l 80 0" fill="none" />
+                    <path class="flujo" d="M 749 78 l 20 0 l 0 -20 l 80 0" fill="none" />
+                    <path d="M 725 90 l 0 20 l 80 0" fill="none" />
+                    <path class="flujo" d="M 725 90 l 0 20 l 80 0" fill="none" />
+                    Sorry, your browser does not support inline SVG.
+                </svg>
+            </section>
+        </section>
+        <section class="segundo"><input type="text" class="entradaTexto" value="192.168.1.86:6001">
+            <l id="conectado">no conectado</l><button id="botonEnviar">Enviar</button>
+        </section>
+    </section>
+    <section class="cajas">
+        <section class="caja" id="caja0">
+            <h4>#Apagar</h4>
+            <p>Las luces se apagarán.</p>
+        </section>
+        <section class="caja" id="caja1">
+            <h4>#Arcoíris 1</h4>
+            <p>Las luces cambian pasando por todos los colores simétricamente.</p>
+            <section class="sectionCheck">
+                <section class="textoCheck">Invertir</section>
+                <section class="checkbox-example">
+                    <input type="checkbox" id="checkbox1" />
+                    <label for="checkbox1"></label>
+                </section>
+            </section>
+        </section>
+        <section class="caja" id="caja2">
+            <h4>#Ráfagas 1</h4>
+            <p>Las luces cambian pasando por el rojo, azul y verde sucesivamente.</p>
+        </section>
+        <section class="caja" id="caja3">
+            <h4>#Fijo</h4>
+            <p>Se visualizará constante el color que elijas previamente.</p>
+            <p><input type="color" value="#EB0E3A"></p>
+        </section>
+        <section class="caja" id="caja4">
+            <h4>#Ráfagas 2</h4>
+            <p>Se visualizará a ráfagas el color que elijas previamente.</p>
+            <p><input type="color" value="#0080FF"></p>
+        </section>
+        <section class="caja" id="caja5">
+            <h4>#DeLadoALado</h4>
+            <p>Se visualizarán ráfagas de lado a lado del color que elijas previamente.</p>
+            <p><input type="color" value="#00FF37"></p>
+        </section>
+        <section class="caja" id="caja6">
+            <h4>#Arcoíris 2</h4>
+            <p>Las luces cambian pasando por todos los colores no simétricamente.</p>
+            <section class="sectionCheck">
+                <section class="textoCheck">Invertir</section>
+                <section class="checkbox-example">
+                    <input type="checkbox" id="checkbox2" />
+                    <label for="checkbox2"></label>
+                </section>
+            </section>
+        </section>
+        <section class="caja" id="caja7">
+            <h4>#Arcoíris 3</h4>
+            <p>Todas las luces cambian pasando por todos los colores conjuntamente.</p>
+        </section>
+    </section>
+    <section class="pie">
+        <p>Autor: <a href="https://tictonis.blogspot.com/">Electro & TIC Toni's</a></p>
+    </section>
+
+
+</body>
+
+</html>

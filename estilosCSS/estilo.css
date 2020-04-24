@@ -1,0 +1,466 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font: 100% Helvetica, sans-serif;
+  color: #5a5a5a;
+}
+
+.navBar {
+  position: relative;
+}
+.navBar ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 1px solid #777777;
+  box-shadow: 0px 5px 18px #777777;
+  display: flex;
+}
+.navBar li {
+  float: left;
+}
+.navBar li a,
+.navBar li section {
+  display: block;
+  color: #5a5a5a;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  height: 100%;
+}
+.navBar li a {
+  padding: 20px 16px;
+}
+.navBar li a:hover:not(.active) {
+  background-color: #ddd;
+}
+.navBar li a.active {
+  color: white;
+  background-color: #4caf50;
+}
+.navBar li section.logo {
+  font-size: x-large;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+}
+.navBar li section.logo object {
+  float: left;
+  height: 25px;
+}
+.navBar li section.logo article {
+  float: left;
+}
+
+.principal {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  background-color: #ff9100;
+}
+.principal .primero {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  overflow: auto;
+}
+.principal .primero .descripcion {
+  width: 30%;
+  padding: 30px 3%;
+  text-align: center;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 25px;
+}
+.principal .primero .animacion {
+  width: 70%;
+  text-align: center;
+  float: left;
+}
+.principal .segundo {
+  width: 100%;
+  text-align: center;
+}
+
+.cajas {
+  padding: 20px 5%;
+  margin: 0px;
+  overflow: auto;
+}
+.cajas .caja {
+  margin: 10px 1%;
+  padding: 5px 0.5%;
+  border-bottom: 1px solid #c0c0c0;
+  box-shadow: 0px 3px 18px #c0c0c0;
+  border-radius: 10px;
+  width: 13.66%;
+  height: 200px;
+  position: relative;
+  transition-duration: 0.4s;
+  float: left;
+  cursor: pointer;
+}
+.cajas .caja h4 {
+  text-align: center;
+}
+.cajas .caja p {
+  margin: 0 0;
+  margin-bottom: 15px;
+  height: 50px;
+  text-align: center;
+}
+.cajas .caja:hover:not(.activo) {
+  border-bottom: 1px solid #777777;
+  box-shadow: 0px 3px 18px #777777;
+}
+
+.activo {
+  color: white;
+  background-color: #ff9100;
+}
+.activo p input[type=color] {
+  border: 3px solid white;
+}
+.activo .sectionCheck .checkbox-example {
+  background: #ff9100;
+  border: 3px solid white;
+}
+.activo .sectionCheck .checkbox-example label {
+  background: white;
+}
+
+button {
+  margin: 4px 4px;
+  border-radius: 10px;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: #5a5a5a;
+  border: 3px solid #ff9100;
+}
+
+button:hover {
+  background-color: #ff9100;
+  color: white;
+}
+
+input[type=color] {
+  border-radius: 10px;
+  border: 3px solid #ff9100;
+  cursor: pointer;
+  background-color: white;
+  padding: 0px 4px;
+  transition-duration: 0.4s;
+}
+
+input[type=color]:hover {
+  background-color: #ff9100;
+}
+
+.pie {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  background-color: #383838;
+  height: 100%;
+  display: flex;
+}
+.pie p {
+  width: 100%;
+  padding: 3%;
+  margin: 0;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+
+svg {
+  margin: 30px 0;
+}
+svg rect {
+  fill: white;
+  stroke-width: 5;
+  stroke: #777777;
+}
+svg circle {
+  stroke: #777777;
+  stroke-width: 1.5;
+  fill: white;
+}
+svg path {
+  stroke-width: 3;
+  stroke: #777777;
+}
+
+.flujo {
+  stroke: blue;
+  stroke-dasharray: 5 123 5 300 5 100 5 190 5 130 5 30 5 200;
+  animation: dash 5s linear forwards;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+.pin {
+  stroke-width: 2;
+  fill: #ff9100;
+}
+
+.entradaTexto {
+  width: 130px;
+  transition-property: border-bottom-width, width;
+  transition-duration: 0.2s, 0.5s;
+  background-color: #ff9100;
+  color: white;
+  border: 0px;
+  border-bottom: 1px solid white;
+  margin: 0 10px 0 10px;
+}
+
+.entradaTexto:hover {
+  width: 200px;
+  border-bottom-width: 3px;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+#l-8 {
+  animation-name: "l-8";
+  -webkit-animation-name: "l-8";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l-7 {
+  animation-name: "l-7";
+  -webkit-animation-name: "l-7";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l-6 {
+  animation-name: "l-6";
+  -webkit-animation-name: "l-6";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l-5 {
+  animation-name: "l-5";
+  -webkit-animation-name: "l-5";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l-4 {
+  animation-name: "l-4";
+  -webkit-animation-name: "l-4";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l-3 {
+  animation-name: "l-3";
+  -webkit-animation-name: "l-3";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l-2 {
+  animation-name: "l-2";
+  -webkit-animation-name: "l-2";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l-1 {
+  animation-name: "l-1";
+  -webkit-animation-name: "l-1";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l0 {
+  animation-name: "l0";
+  -webkit-animation-name: "l0";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l1 {
+  animation-name: "l1";
+  -webkit-animation-name: "l1";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l2 {
+  animation-name: "l2";
+  -webkit-animation-name: "l2";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l3 {
+  animation-name: "l3";
+  -webkit-animation-name: "l3";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l4 {
+  animation-name: "l4";
+  -webkit-animation-name: "l4";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l5 {
+  animation-name: "l5";
+  -webkit-animation-name: "l5";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l6 {
+  animation-name: "l6";
+  -webkit-animation-name: "l6";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l7 {
+  animation-name: "l7";
+  -webkit-animation-name: "l7";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+#l8 {
+  animation-name: "l8";
+  -webkit-animation-name: "l8";
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes l-8 {}
+@keyframes l-7 {}
+@keyframes l-6 {}
+@keyframes l-5 {}
+@keyframes l-4 {}
+@keyframes l-3 {}
+@keyframes l-2 {}
+@keyframes l-1 {}
+@keyframes l0 {}
+@keyframes l1 {}
+@keyframes l2 {}
+@keyframes l3 {}
+@keyframes l4 {}
+@keyframes l5 {}
+@keyframes l6 {}
+@keyframes l7 {}
+@keyframes l8 {}
+@media screen and (max-width: 1650px) {
+  .principal .primero .descripcion {
+    font-size: 22px;
+  }
+
+  .cajas .caja {
+    width: 22%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .principal .primero {
+    display: block;
+  }
+  .principal .primero .descripcion {
+    width: 96%;
+    padding: 35px 5px 2% 2%;
+    font-size: 20px;
+  }
+  .principal .primero .animacion {
+    width: 100%;
+  }
+  .principal .primero .animacion svg {
+    margin: 0px 0;
+  }
+
+  .cajas .caja {
+    width: 47%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .cajas .caja {
+    width: 97%;
+  }
+}
+.sectionCheck {
+  padding: 0px;
+  margin: 0px 20% 0 20%;
+}
+.sectionCheck .textoCheck {
+  text-align: right;
+  width: 42%;
+  margin: 0 0;
+  float: left;
+  padding: 3px 4% 0 4%;
+}
+.sectionCheck .checkbox-example {
+  cursor: default;
+  float: left;
+  width: 45px;
+  height: 20px;
+  background: white;
+  margin: 0 0;
+  position: relative;
+  border-radius: 20px;
+  border: 3px solid #ff9100;
+}
+.sectionCheck .checkbox-example label {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  background: #ff9100;
+  cursor: pointer;
+}
+.sectionCheck .checkbox-example input[type=checkbox]:checked + label {
+  left: 27px;
+}
+.sectionCheck input[type=checkbox] {
+  visibility: hidden;
+}
+
+a{
+  color: white;
+}
